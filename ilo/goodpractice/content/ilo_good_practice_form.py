@@ -37,9 +37,33 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=True,
         )
 
-    description = schema.TextLine(
-        title=_(u'Evaluation Title'),
+    description = schema.Text(
+        title=_(u'Description'),
+        description=u'Used in item listings and search results.',
+        required=False,
+        )
+
+    startDate = schema.Date(
+        title=_(u'Project start'),
         description=u'',
+        required=True,
+        )
+
+    endDate = schema.Date(
+        title=_(u'Project end'),
+        description=u'',
+        required=True,
+        )
+
+    project = schema.TextLine(
+        title=_(u'Project TC/SYMBOL'),
+        description=u'',
+        required=True,
+        )
+
+    evaluator = schema.TextLine(
+        title=_(u'Evaluator'),
+        description=u'Name of Evaluator',
         required=True,
         )
 
