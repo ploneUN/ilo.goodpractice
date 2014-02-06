@@ -38,9 +38,11 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         )
 
     description = schema.Text(
-        title=_(u'Description'),
-        description=u'Used in item listings and search results.',
-        required=False,
+        title=_(u'Brief summary of the good practice'),
+        description=_(u'Brief summary of the good practice (link to'
+                      u' project goal or specific deliverable, background,'
+                      u' purpose, etc.'),
+        required=True,
         )
 
     startDate = schema.Date(
@@ -67,41 +69,33 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=True,
         )
 
-    brief_summary = RichText(
-        title=_(u'Brief summary of the good practice'),
-        description=_(u'Brief summary of the good practice (link to'
-                      u' project goal or specific deliverable, background,'
-                      u' purpose, etc.'),
-        required=True,
-        )
-
-    relevant_condition = RichText(
+    relevant_condition = schema.Text(
         title=_(u'Relevant conditions and Context'),
         description=_(u'Relevant conditions and Context: limitations or advice'
                       u' in terms of applicability  and replicability'),
         required=True,
         )
 
-    cause_effect = RichText(
+    cause_effect = schema.Text(
         title=_(u'Cause-effect relationship'),
         description=_(u'Establish a clear cause-effect relationship'),
         required=True,
         )
 
-    impact = RichText(
+    impact = schema.Text(
         title=_(u'Measurable impact'),
         description=_(u'Indicate measurable impact and targeted'
                       u' beneficiaries'),
         required=True,
         )
 
-    replication = RichText(
+    replication = schema.Text(
         title=_(u'Potential for replication'),
         description=_(u'Potential for replication and by whom'),
         required=True,
         )
 
-    upward_link = RichText(
+    upward_link = schema.Text(
         title=_(u'Upward links to higher ILO Goals'),
         description=_(u'Upward links to higher ILO Goals (DWCPs,'
                       u" Country Programme Outcomes or ILO's Strategic"
@@ -109,7 +103,7 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=True,
         )
 
-    other = RichText(
+    other = schema.Text(
         title=_(u'Other documents'),
         description=_(u'Other documents or relevant comments'),
         required=True,
