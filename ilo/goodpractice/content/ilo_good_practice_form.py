@@ -32,13 +32,13 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
     Good Practice Form
     """
     title = schema.TextLine(
-        title=_(u'Evaluation Title'),
+        title=_(u'Good Practice Title'),
         description=u'',
         required=True,
         )
 
     description = schema.Text(
-        title=_(u'Brief summary of the good practice'),
+        title=_(u'Summary'),
         description=_(u'Brief summary of the good practice (link to'
                       u' project goal or specific deliverable, background,'
                       u' purpose, etc.'),
@@ -46,13 +46,13 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         )
 
     start = schema.Date(
-        title=_(u'Project start'),
+        title=_(u'Start'),
         description=u'',
         required=True,
         )
 
     end = schema.Date(
-        title=_(u'Project end'),
+        title=_(u'End'),
         description=u'',
         required=True,
         )
@@ -63,40 +63,34 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=True,
         )
 
-    goodpractice_evaluator = schema.TextLine(
-        title=_(u'Evaluator'),
-        description=u'Name of Evaluator',
-        required=True,
-        )
-
     goodpractice_context = schema.Text(
-        title=_(u'Relevant conditions and Context'),
+        title=_(u'Context'),
         description=_(u'Relevant conditions and Context: limitations or advice'
                       u' in terms of applicability  and replicability'),
         required=True,
         )
 
     goodpractice_cause_effect = schema.Text(
-        title=_(u'Cause-effect relationship'),
+        title=_(u'Cause/effect'),
         description=_(u'Establish a clear cause-effect relationship'),
         required=True,
         )
 
     goodpractice_indicator = schema.Text(
-        title=_(u'Measurable impact'),
+        title=_(u'Indicators'),
         description=_(u'Indicate measurable impact and targeted'
                       u' beneficiaries'),
         required=True,
         )
 
     goodpractice_replication = schema.Text(
-        title=_(u'Potential for replication'),
+        title=_(u'Replication'),
         description=_(u'Potential for replication and by whom'),
         required=True,
         )
 
     goodpractice_link = schema.Text(
-        title=_(u'Upward links to higher ILO Goals'),
+        title=_(u'Links'),
         description=_(u'Upward links to higher ILO Goals (DWCPs,'
                       u" Country Programme Outcomes or ILO's Strategic"
                       u' Programme Framework)'),
@@ -104,7 +98,7 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         )
 
     goodpractice_comment = schema.Text(
-        title=_(u'Other documents'),
+        title=_(u'Comments'),
         description=_(u'Other documents or relevant comments'),
         required=True,
         )
