@@ -29,6 +29,9 @@
         </p>
 
         <tal:listing tal:condition="batch">
+        <a tal:attributes="href
+        string:${context/absolute_url}/download_csv">Download CSV</a>
+
           <table class="listing collection-listing" summary="Content listing"
               i18n:attributes="summary"
               tal:define="fields view/goodpracticefields;
