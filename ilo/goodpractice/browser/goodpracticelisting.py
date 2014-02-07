@@ -11,10 +11,9 @@ class GoodPracticeListing(grok.View):
 
     def goodpracticefields(self):
         data = [
-            ('title', 'Good Practice Title'),
+            ('Title', 'Good Practice'),
 #            ('theme', 'theme'),
-#            ('creator', 'creator'),
-#            ('category', 'Keywords'),
+            ('Creator', 'Creator'),
             ('start', 'Start'),
             ('end', 'End'),
             ('description', 'Summary'),
@@ -23,6 +22,7 @@ class GoodPracticeListing(grok.View):
             ('goodpractice_indicator', 'Indicators'),
             ('goodpractice_replication', 'Replication'),
             ('goodpractice_link', 'Links'),
+            ('goodpractice_keywords', 'Keywords'),
             ('goodpractice_comment', 'Comments'),
 
 

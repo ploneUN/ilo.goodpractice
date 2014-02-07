@@ -97,10 +97,15 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=True,
         )
 
+    goodpractice_keywords = schema.Text(
+        title=_(u'Keywords'),
+        required=False,
+        )
+
     goodpractice_comment = schema.Text(
         title=_(u'Comments'),
         description=_(u'Other documents or relevant comments'),
-        required=True,
+        required=False,
         )
 
 
