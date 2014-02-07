@@ -27,6 +27,7 @@
      <element value="plone.app.dexterity.behaviors.metadata.IOwnership"/>          
      <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>        
      <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/> 
+     <element value="ilo.extenders.behavior.evaltheme.IEvalTheme"/> 
    </property>
 
   <!-- View information -->
