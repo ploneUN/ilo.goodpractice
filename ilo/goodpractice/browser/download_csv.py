@@ -5,13 +5,14 @@ import csv, codecs, cStringIO
 
 
 class DownloadCSV(grok.View):
-    grok.context(IContentish)
+    grok.context(IContentish) #FIXME Limit to Collections
     grok.require('zope2.View')
     grok.name('download_csv')
 
-    def render(self):
+    def render(self):        
 
-        
+        out = cStringIO.StringIO()
+        writer = csv.writer(out)
        
         #Column Headings
         headings = [  'Good Practice',
@@ -28,52 +29,79 @@ class DownloadCSV(grok.View):
                       'Comments',
                     ]
         
-        #Rows
+
+        writer.writerow(headings)
+
         brains = self.context.results()
+
+        # The following can be refactored into a single useful CSV cleanup library
+        # given list of fields, check if None, int, date convert accordingly to string.
+        # One might already exist 
 
         for brain in brains:
             obj = brain.getObject()
             row = []
-            row.append(obj.title)
-            row.append(obj.Creator()) #XXX need to covert to fullname
-            row.append(obj.start.isoformat()) #
-            row.append(obj.end.isoformat()) ###XXX needs to be formatted as string
-            row.append(obj.description)
-            row.append(obj.goodpractice_context)
-            row.append(obj.goodpractice_cause_effect)
-            row.append(obj.goodpractice_indicator)
-            row.append(obj.goodpractice_replication)
-            row.append(obj.goodpractice_link)
-            row.append(obj.goodpractice_keywords)
-            row.append(obj.goodpractice_comment)
+
+            if obj.title:
+                row.append(obj.title)
+
+            if obj.Creator():
+                row.append(obj.Creator())
+
+            if obj.start:
+                row.append(obj.start.isoformat())
+            else:
+                row.append("")
+            
+            if  obj.end:
+                row.append(obj.end.isoformat())
+            else:
+                row.append("")
+            
+            if obj.description:
+                row.append(obj.description)
+            else:
+                row.append("")
+            
+            if obj.goodpractice_context:
+                row.append(obj.description)
+            else:
+                row.append("")
+            
+            if obj.goodpractice_cause_effect:
+                row.append(obj.goodpractice_cause_effect)
+            else:
+                row.append("")
+            
+            if obj.goodpractice_indicator:
+                row.append(obj.goodpractice_indicator)
+            else:
+                row.append("")
+            
+            if obj.goodpractice_replication:
+                row.append(obj.goodpractice_replication)
+            else:
+                row.append("")
+            
+            if obj.goodpractice_link:
+                row.append(obj.goodpractice_link)
+            else:
+                row.append("")
+
+            if obj.goodpractice_keywords:
+                row.append(obj.goodpractice_keywords)
+            else:
+                row.append("")
+
+            if obj.goodpractice_comment:
+                row.append(obj.goodpractice_comment)
+            else:
+                row.append("")
         
-
-        out = cStringIO.StringIO()
-
-        import ipdb; ipdb.set_trace()
-
-        writer = UnicodeWriter(self, out)  
+            writer.writerow([s.encode('utf-8') for s in row])
 
         filename = "good_practice.csv"
         self.request.response.setHeader('Content-Type', 'text/csv')
         self.request.response.setHeader('Content-Disposition', 'attachment; filename="%s"' % filename)
 
         return out.getvalue()
-
-class UnicodeWriter:
-    def __init__(self, f, dialect=csv.excel, encoding="utf-8-sig", **kwds):
-        self.queue = cStringIO.StringIO()
-        self.writer = csv.writer(self.queue, dialect=dialect, **kwds)
-        self.stream = f
-        self.encoder = codecs.getincrementalencoder(encoding)()
-    def writerow(self, row):
-        self.writer.writerow([s.encode("utf-8") for s in row])
-        data = self.queue.getvalue()
-        data = data.decode("utf-8")
-        data = self.encoder.encode(data)
-        self.stream.write(data)
-        self.queue.truncate(0)
-
-    def writerows(self, rows):
-        for row in rows:
-            self.writerow(row)
