@@ -17,6 +17,7 @@ class DownloadCSV(grok.View):
        
         #Column Headings
         headings = [  'Good Practice',
+                      'Theme',
                       'Creator',
                       'Start Date',
                       'End Date',
@@ -45,6 +46,11 @@ class DownloadCSV(grok.View):
 
             if obj.title:
                 row.append(obj.title)
+
+            if obj.eval_theme:
+                row.append(', '.join(obj.eval_theme))
+            else:
+                row.append("")
 
             if obj.Creator():
                 user = api.user.get(username=obj.Creator())
