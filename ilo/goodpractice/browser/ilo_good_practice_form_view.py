@@ -10,3 +10,8 @@ class Index(dexterity.DisplayForm):
     grok.template('ilo_good_practice_form_view')
     grok.name('view')
 
+    def get_schema(self):
+        return ['description', 'goodpractice_context',
+                'goodpractice_cause_effect',
+                'goodpractice_indicator', 'goodpractice_replication',
+                'goodpractice_link', 'goodpractice_comment']

@@ -15,12 +15,63 @@
     if needed.
 </tal:comment>
 
-<metal:main fill-slot="content-core">
+<metal:main fill-slot="main">
   <metal:content-core define-macro="content-core">
+  <div id="content-core">
+  <div class="gp-template-top">
+  <h1>ILO Emerging Good Practice Template</h1>
+  <div><span class="gp-template-top-title">Good Practice Title: </span><span tal:content="context/title"/></div>
+      <div><span class="gp-template-top-title">Theme: </span>
+                <tal:block repeat="theme context/eval_theme">
+                <span tal:content="theme"/><span tal:condition="not: repeat/theme/end">,</span>
+                </tal:block>
+          </div>
+          <div tal:define="pas_member context/@@pas_member"><span class="gp-template-top-title">Submitted By: </span>
+                        <span tal:define="author python:pas_member.info(context.Creator());
+                                      name python:author['fullname'] or author['username']">
+                          <a href="#"
+                             tal:condition="author"
+                             tal:attributes="href string:author/${author/username};
+                                             title name"
+                             tal:content="name">Jos Henken</a>
+                      </span>
+            </div>
+            <div tal:define="startDate python: context.start.strftime('%d %b %Y');
+                endDate python: context.end.strftime('%d %b %Y')
+                "><span class="gp-template-top-title">Date: </span>
+                <span tal:condition="python: context.start == context.end"
+                    tal:content="startDate">
+                </span>
+                 <span tal:condition="python: context.start != context.end"
+                     tal:content="string: ${startDate} - ${endDate}">
+                </span>
+            </div>
+          <div><span class="gp-template-top-title">Keywords: </span><span tal:content="context/goodpractice_keywords"></span> </div>
+          <div><span class="gp-template-top-title">The following emerging good practice has been identified during
+              the course of an evaluation. Further text can be found in the
+              full evaluation reports - TC/SYMBOL(s)</span> <span
+                  tal:content="context/goodpractice_project"></span>. 
+              </div>
+  </div>
+  <table class="goodpractice-table Fancy grid listing">
+      <thead>
+          <tr class="gp-table-header">
+              <th> GP Element</th>
+              <th>Text</th>
+          </tr>
+      </thead>
+      <tr tal:repeat="item view/get_schema">
+          <td>
+              <span class="gp-element-title" tal:content="python:
+                  view.schema.getDescriptionFor(item).title"/><span
+                      class="gp-element-title">: </span>
+                  <span class="gp-element-description" tal:content="python: view.schema.getDescriptionFor(item).description"/>
+             </td>
+          <td tal:content="python: getattr(context, item)"></td>
+      </tr>
+  </table>
 
-
-  hello love
-
+  </div>
   </metal:content-core>
 </metal:main>
 

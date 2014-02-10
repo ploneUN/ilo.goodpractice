@@ -2,6 +2,7 @@ from five import grok
 from Products.CMFCore.interfaces import IContentish
 from Products.CMFPlone.utils import safe_unicode
 import csv, codecs, cStringIO
+from plone import api
 
 
 class DownloadCSV(grok.View):
@@ -46,7 +47,11 @@ class DownloadCSV(grok.View):
                 row.append(obj.title)
 
             if obj.Creator():
-                row.append(obj.Creator())
+                user = api.user.get(username=obj.Creator())
+                if user.fullname:
+                    row.append(user.fullname)
+                else:
+                    row.append(obj.Creator())
 
             if obj.start:
                 row.append(obj.start.isoformat())

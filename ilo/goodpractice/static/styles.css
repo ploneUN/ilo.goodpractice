@@ -1,0 +1,24 @@
+/* styles.css */
+.goodpractice-table, .goodpractice-table th, .goodpractice-table td {
+ border: 1px solid;
+ padding: 5px;
+}
+
+.gp-element-title {
+    color: red;
+    font-weight: bold;
+}
+.gp-element-description {
+    font-weight: bold;
+}
+.gp-template-top {
+    padding: 0 10px 10px 10px;
+}
+.gp-template-top h1 {
+    text-align: center;
+}
+.gp-template-top-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
