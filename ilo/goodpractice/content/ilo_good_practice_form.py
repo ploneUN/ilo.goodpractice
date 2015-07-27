@@ -107,6 +107,14 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         description=_(u'Other documents or relevant comments'),
         required=False,
         )
+    
+    country = schema.Choice(
+            title=_(u'Country'),
+            description=_(u'Please select a country'),
+            vocabulary='ilo.goodpractice.country',
+            required=True,
+            missing_value = None,
+            )
 
 
 alsoProvides(IILOGoodPracticeForm, IFormFieldProvider)
