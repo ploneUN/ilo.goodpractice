@@ -31,9 +31,11 @@ setup(name='ilo.goodpractice',
           'collective.grok',
           'plone.app.referenceablebehavior',
           'collective.dexteritytextindexer',
-          'plone.app.multilingual',
-          'plone.multilingualbehavior',
+          # 'plone.app.multilingual',
+          # 'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
+          'collective.excelexport',
+          'p01.vocabulary.country'
           # -*- Extra requirements: -*-
       ],
       extras_require={
