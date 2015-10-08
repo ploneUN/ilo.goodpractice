@@ -35,7 +35,8 @@ setup(name='ilo.goodpractice',
           # 'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
           'collective.excelexport',
-          'p01.vocabulary.country'
+          'p01.vocabulary.country',
+          'collective.monkeypatcher',
           # -*- Extra requirements: -*-
       ],
       extras_require={
