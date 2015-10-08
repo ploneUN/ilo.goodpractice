@@ -1,10 +1,15 @@
 Changelog
 =========
 
-1.3 (unreleased)
+1.2.3b (unreleased)
 ----------------
 
 - Nothing changed yet.
+
+1.2.2 (2015-10-08)
+------------------
+
+- add requirement for collective.excelexport
 
 
 1.2 (2014-02-10)

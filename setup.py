@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2.1'
+version = '1.2.3b'
 
 setup(name='ilo.goodpractice',
       version=version,
@@ -31,8 +31,8 @@ setup(name='ilo.goodpractice',
           'collective.grok',
           'plone.app.referenceablebehavior',
           'collective.dexteritytextindexer',
-          # 'plone.app.multilingual',
-          # 'plone.multilingualbehavior',
+          'plone.app.multilingual',
+          'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
           'collective.excelexport',
           'p01.vocabulary.country',
