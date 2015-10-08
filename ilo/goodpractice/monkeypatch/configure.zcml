@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    i18n_domain="collective.monkeypatcher">
+
+  <include package="collective.monkeypatcher" />
+  <monkey:patch
+      description='Monkeypatch for limited 47 characters'
+      class='collective.excelexport.exportables.dexterityfields.TextFieldRenderer'
+      original='render_value'
+      replacement='.dexterityfieldspatch.render_value_patch'
+  />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>
