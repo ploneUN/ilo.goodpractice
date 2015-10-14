@@ -5,8 +5,8 @@
   <object name="export.csv" meta_type="CMF Action" i18n:domain="ilo.goodpractice">
    <property name="title" i18n:translate="">Export CSV</property>
    <property name="description" i18n:translate=""></property>
-   <property name="url_expr">string:${object/aq_parent/absolute_url}/@@collective.excelexport</property>
-   <property name="available_expr">python:context.portal_type == 'Collection'</property>
+   <property name="url_expr">string:${object/absolute_url}/@@collective.excelexport?excelexport.policy=eea.facetednavigation</property>
+   <property name="available_expr">object/@@faceted_subtyper/can_disable</property>
    <property name="link_target"></property>
    <property name="icon_expr"></property>
    <property name="visible">True</property>
