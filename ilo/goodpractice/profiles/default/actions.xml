@@ -2,8 +2,19 @@
 <object name="portal_actions" meta_type="Plone Actions Tool"
  xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <object name="object_buttons" meta_type="CMF Action Category">
-  <object name="export.csv" meta_type="CMF Action" i18n:domain="ilo.goodpractice">
+
+  <object name="Export CSV" meta_type="CMF Action" i18n:domain="ilo.goodpractice">
    <property name="title" i18n:translate="">Export CSV</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:${object/aq_parent/absolute_url}/@@collective.excelexport</property>
+   <property name="available_expr">object/@@faceted_subtyper/can_enable</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="visible">True</property>
+  </object>
+
+  <object name="Export CSV (Faceted Navigation)" meta_type="CMF Action" i18n:domain="ilo.goodpractice">
+   <property name="title" i18n:translate="">Export CSV (Faceted Navigation)</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object/absolute_url}/@@collective.excelexport?excelexport.policy=eea.facetednavigation</property>
    <property name="available_expr">object/@@faceted_subtyper/can_disable</property>
@@ -11,5 +22,6 @@
    <property name="icon_expr"></property>
    <property name="visible">True</property>
   </object>
+
  </object>
 </object>
