@@ -37,6 +37,7 @@ setup(name='ilo.goodpractice',
           'collective.excelexport',
           'p01.vocabulary.country',
           'collective.monkeypatcher',
+          'z3c.jbot'
           # -*- Extra requirements: -*-
       ],
       extras_require={
