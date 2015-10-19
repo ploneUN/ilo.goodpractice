@@ -22,9 +22,9 @@
         name="ilo.goodpractice"
         directory="static"/>
 
-    <!-- <browser:jbot
+    <browser:jbot
         directory="jbot"
-        layer=".interfaces.IProductSpecific" />  -->
+        layer=".interfaces.IProductSpecific" />
 
 
     <!-- -*- extra stuff goes here -*- -->
