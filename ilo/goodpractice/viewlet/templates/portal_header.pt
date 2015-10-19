@@ -6,16 +6,16 @@
  <script type="text/javascript">
     var url = window.location.href;
     var hash = window.location.hash.replace('#', '');
-    var link = url.replace(hash, '').replace('#', '')
-    var data_string = '/@@collective.excelexport?excelexport.policy=eea.facetednavigation&'
+    var link = url.replace(hash, '').replace('#', '');
+    var data_string = '/@@collective.excelexport?excelexport.policy=eea.facetednavigation&';
     $(document).ready(function(){
       document.getElementById("plone-contentmenu-actions-Export CSV").href = link + data_string + hash;
     });
     function locationHashChanged() {
        url = window.location.href;
        hash = window.location.hash.replace('#', '');
-       link = url.replace(hash, '').replace('#', '')
-       data_string = '/@@collective.excelexport?excelexport.policy=eea.facetednavigation&'
+       link = url.replace(hash, '').replace('#', '');
+       data_string = '/@@collective.excelexport?excelexport.policy=eea.facetednavigation&';
       document.getElementById("plone-contentmenu-actions-Export CSV").href = link + data_string + hash;
     }
   window.onhashchange = locationHashChanged;
