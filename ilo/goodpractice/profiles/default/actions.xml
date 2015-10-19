@@ -4,7 +4,7 @@
  <object name="object_buttons" meta_type="CMF Action Category">
 
   <object name="Export CSV" meta_type="CMF Action" i18n:domain="eea">
-   <property name="title" i18n:translate="">Export CSV (Faceted Navigation)</property>
+   <property name="title" i18n:translate="">Export CSV</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object/aq_parent/absolute_url}/@@collective.excelexport</property>
 
