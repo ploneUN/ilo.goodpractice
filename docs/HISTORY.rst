@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.2.4b (unreleased)
+----------------
+
+- added export to csv facility on faceted (2015-10-20)
+
+
 1.2.3b (unreleased)
 ----------------
 
