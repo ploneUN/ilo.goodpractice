@@ -1,5 +1,9 @@
 Changelog
 =========
+1.2.5 (04 Nov 2015)
+________________
+- added dexteritytextindexer for goodpractice_keywords
+
 
 1.2.4b (unreleased)
 ----------------
