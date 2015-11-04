@@ -97,6 +97,7 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=True,
         )
 
+    dexteritytextindexer.searchable('goodpractice_keywords')
     goodpractice_keywords = schema.Text(
         title=_(u'Keywords'),
         required=False,
