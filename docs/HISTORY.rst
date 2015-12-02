@@ -1,5 +1,9 @@
 Changelog
 =========
+1.2.5dev0 (02 dec 2015)
+________________
+- adjustment for ilo good pratice for view template
+
 1.2.5 (04 Nov 2015)
 ________________
 - added dexteritytextindexer for goodpractice_keywords
