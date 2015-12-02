@@ -1,15 +1,38 @@
 /* styles.css */
-.goodpractice-table, .goodpractice-table th, .goodpractice-table td {
- border: 1px solid;
- padding: 5px;
-}
-
 .gp-element-title {
     color: red;
     font-weight: bold;
+    cursor: pointer;
+    display: inline;
+    position: relative;
+}
+.gp-element-title:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+.gp-element-title:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
 }
 .gp-element-description {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-style: italic;
+    display: block;
 }
 .gp-template-top {
     padding: 0 10px 10px 10px;

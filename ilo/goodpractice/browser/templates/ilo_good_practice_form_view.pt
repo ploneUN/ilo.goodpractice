@@ -62,10 +62,9 @@
       </thead>
       <tr tal:repeat="item view/get_schema">
           <td>
-              <span class="gp-element-title" tal:content="python:
-                  view.schema.getDescriptionFor(item).title"/><span
-                      class="gp-element-title">: </span>
-                  <span class="gp-element-description" tal:content="python: view.schema.getDescriptionFor(item).description"/>
+              <label class="gp-element-title" tal:attributes="title python: view.schema.getDescriptionFor(item).description">
+                <span title="" tal:content="python: view.schema.getDescriptionFor(item).title"/>
+              </label>
              </td>
           <td tal:content="python: getattr(context, item)"></td>
       </tr>
