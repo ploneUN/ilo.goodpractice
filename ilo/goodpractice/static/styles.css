@@ -1,6 +1,6 @@
 /* styles.css */
 .gp-element-title {
-    color: red;
+    /*color: red;*/
     font-weight: bold;
     cursor: pointer;
     display: inline;
@@ -30,8 +30,7 @@
     z-index: 99;
 }
 .gp-element-description {
-    /*font-weight: bold;*/
-    font-style: italic;
+    font-weight: bold;
     display: block;
 }
 .gp-template-top {
@@ -44,4 +43,11 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+/*table*/
+table.dr-sr-view.listing{border-collapse:collapse}
+table.dr-sr-view.listing tr td:nth-child(1){vertical-align: middle}
+table.dr-sr-view.listing tr td:nth-child(2){background:#F4F4F4 !important}
+table.dr-sr-view.listing tr,table.dr-sr-view.listing td{border:.1em solid #e7e7e7;padding:.5em 1em;vertical-align:top;background:#F4F4F4}
+table.dr-sr-view.listing td.row-header{width:100px;text-align:left;color:#666;font-weight:700;border:.1em solid #e7e7e7;border-style:solid solid none;background:#ddd}
 
