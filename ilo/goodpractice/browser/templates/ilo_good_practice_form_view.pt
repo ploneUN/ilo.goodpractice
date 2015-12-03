@@ -20,40 +20,41 @@
   <div id="content-core">
   <div class="gp-template-top">
   <h1>ILO Emerging Good Practice Template</h1>
-  <div><span class="gp-template-top-title">Good Practice Title: </span><span tal:content="context/title"/></div>
-      <div><span class="gp-template-top-title">Theme: </span>
+            <div><label>Good Practice Title: </label><span tal:content="context/title"/></div>
+            <div><label>Theme: </label>
                 <tal:block repeat="theme context/eval_theme">
                 <span tal:content="theme"/><span tal:condition="not: repeat/theme/end">,</span>
                 </tal:block>
-          </div>
-          <div tal:define="pas_member context/@@pas_member"><span class="gp-template-top-title">Submitted By: </span>
-                        <span tal:define="author python:pas_member.info(context.Creator());
-                                      name python:author['fullname'] or author['username']">
-                          <a href="#"
-                             tal:condition="author"
-                             tal:attributes="href string:author/${author/username};
-                                             title name"
-                             tal:content="name">Jos Henken</a>
-                      </span>
+            </div>
+            <div tal:define="pas_member context/@@pas_member">
+                <label>Submitted By: </label>
+                <span tal:define="author python:pas_member.info(context.Creator());
+                              name python:author['fullname'] or author['username']">
+                  <a href="#"
+                     tal:condition="author"
+                     tal:attributes="href string:author/${author/username};
+                                     title name"
+                     tal:content="name">Jos Henken</a>
+                </span>
             </div>
             <div tal:define="startDate python: context.start.strftime('%d %b %Y');
                 endDate python: context.end.strftime('%d %b %Y')
-                "><span class="gp-template-top-title">Date: </span>
+                ">
+                <label class="gp-template-top-title">Date: </label>
                 <span tal:condition="python: context.start == context.end"
                     tal:content="startDate">
                 </span>
-                 <span tal:condition="python: context.start != context.end"
+                <span tal:condition="python: context.start != context.end"
                      tal:content="string: ${startDate} - ${endDate}">
                 </span>
             </div>
-          <div><span class="gp-template-top-title">Keywords: </span><span tal:content="context/goodpractice_keywords"></span> </div>
-          <div><span class="gp-template-top-title">The following emerging good practice has been identified during
+            <div><label>Keywords: </label><span tal:content="context/goodpractice_keywords"></span> </div>
+            <div><label>The following emerging good practice has been identified during
               the course of an evaluation. Further text can be found in the
-              full evaluation reports - TC/SYMBOL(s)</span> <span
-                  tal:content="context/goodpractice_project"></span>. 
-              </div>
+              full evaluation reports - TC/SYMBOL(s)</label>
+                <span tal:content="context/goodpractice_project"></span>.</div>
   </div>
-  <table class="goodpractice-table Fancy grid listing">
+  <table class="dr-sr-view listing">
       <thead>
           <tr class="gp-table-header">
               <th> GP Element</th>
@@ -61,7 +62,7 @@
           </tr>
       </thead>
       <tr tal:repeat="item view/get_schema">
-          <td>
+          <td class="row-header">
               <label class="gp-element-title" tal:attributes="title python: view.schema.getDescriptionFor(item).description">
                 <span title="" tal:content="python: view.schema.getDescriptionFor(item).title"/>
               </label>
