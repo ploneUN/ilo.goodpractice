@@ -1,5 +1,9 @@
 Changelog
 =========
+1.2.5dev1 (04 dec 2015)
+________________
+- adjustment for good practice form view
+
 1.2.5dev0 (02 dec 2015)
 ________________
 - adjustment for ilo good pratice for view template
