@@ -23,6 +23,7 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from collective import dexteritytextindexer
 
 from ilo.goodpractice import MessageFactory as _
+from plone.formwidget.contenttree import ObjPathSourceBinder
 
 
 # Interface class; used to define content-type schema.
@@ -108,13 +109,21 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
         required=False,
         )
     
-    country = schema.Choice(
-            title=_(u'Country'),
-            description=_(u'Please select a country'),
-            vocabulary='ilo.goodpractice.country',
-            required=True,
-            missing_value = None,
-            )
+    # country = schema.Choice(
+    #         title=_(u'Country'),
+    #         description=_(u'Please select a country'),
+    #         vocabulary='ilo.goodpractice.country',
+    #         required=True,
+    #         missing_value = None,
+    #         )
+
+    country = schema.List(
+        title=_(u'Country'),
+        description=_(u'Please select a country'),
+        value_type=schema.Choice(vocabulary='ilo.goodpractice.country'),
+        required=False,
+        )
+
 
 
 alsoProvides(IILOGoodPracticeForm, IFormFieldProvider)
