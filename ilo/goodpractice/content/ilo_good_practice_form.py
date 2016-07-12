@@ -23,6 +23,7 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from collective import dexteritytextindexer
 
 from ilo.goodpractice import MessageFactory as _
+from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 
