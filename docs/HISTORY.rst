@@ -1,5 +1,8 @@
 Changelog
 =========
+1.2.5dev3 -july 13
+-set country to multiple 
+
 1.2.5dev1 (04 dec 2015)
 ________________
 - adjustment for good practice form view
