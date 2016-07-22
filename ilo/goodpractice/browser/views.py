@@ -1,4 +1,3 @@
-from ilo.goodpractice.behavior.check_facetednavigation import CheckFacetedNavigation
 from zope.interface import Interface
 from five import grok
 from zope.component import getMultiAdapter
