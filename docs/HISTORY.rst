@@ -1,5 +1,8 @@
 Changelog
 =========
+1.2.5dev5 - july 22
+-fixed js error on faceted
+
 1.2.5dev4 - july 21
 -added export to csv on goodpractice on browserview
 
