@@ -1,5 +1,8 @@
 Changelog
 =========
+1.2.5dev4 - july 21
+-added export to csv on goodpractice on browserview
+
 1.2.5dev3 -july 13
 -set country to multiple 
 
