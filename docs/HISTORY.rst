@@ -1,5 +1,8 @@
 Changelog
 =========
+1.2.5dev6 - aug 2
+-changed vocabulary for country
+
 1.2.5dev5 - july 22
 -fixed js error on faceted
 
