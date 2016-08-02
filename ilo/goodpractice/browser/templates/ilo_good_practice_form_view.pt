@@ -54,7 +54,7 @@
               full evaluation reports - TC/SYMBOL(s)</label>
                 <span tal:content="context/goodpractice_project"></span>.</div>
   </div>
-  <table class="dr-sr-view listing">
+<!--   <table class="dr-sr-view listing">
       <thead>
           <tr class="gp-table-header">
               <th> GP Element</th>
@@ -69,7 +69,24 @@
              </td>
           <td tal:content="python: getattr(context, item)"></td>
       </tr>
-  </table>
+  </table> -->
+  <table class="dr-sr-view listing">
+      <thead>
+          <tr class="gp-table-header">
+              <th> GP Element</th>
+              <th>Text</th>
+          </tr>
+      </thead>
+    <tal:block repeat="widget view/widgets/values">
+        <div class="field" tal:condition="python:widget.__name__ not in ('IDublinCore.title', 'IDublinCore.description', 'title', 'eval_theme', 'start','end','goodpractice_keywords', 'goodpractice_project')">
+          <tr>
+            <td class="row-header" tal:content="widget/label" />
+            <td tal:define='data widget/render' tal:content="structure python: data.title()" />
+          </tr>
+            
+        </div>
+    </tal:block>
+</table>
 
   </div>
   </metal:content-core>
