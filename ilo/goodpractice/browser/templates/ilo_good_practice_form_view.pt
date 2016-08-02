@@ -67,10 +67,17 @@
                 <span title="" tal:content="python: view.schema.getDescriptionFor(item).title"/>
               </label>
              </td>
-          <td tal:content="python: getattr(context, item)"></td>
+          <td tal:content="python: getattr(context, item)"/>
+      </tr>
+      <tr>
+        <td class="row-header">Country</td>
+        <td tal:content="python: ', '.join(context.country)"/>
+      </tr>
+      <tr>
+        <td class="row-header">Themes</td>
+        <td tal:content="python: ', '.join(context.eval_theme)"/>
       </tr>
   </table>
-
   </div>
   </metal:content-core>
 </metal:main>
