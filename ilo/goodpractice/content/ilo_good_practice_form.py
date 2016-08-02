@@ -122,7 +122,8 @@ class IILOGoodPracticeForm(form.Schema, IImageScaleTraversable):
     country = schema.List(
         title=_(u'Country'),
         description=_(u'Please select a country'),
-        value_type=schema.Choice(vocabulary='ilo.goodpractice.country'),
+        value_type=schema.Choice(vocabulary='ilo.vocabulary.countries'),
+        # value_type=schema.Choice(vocabulary='ilo.goodpractice.country'),
         required=False,
         )
 
