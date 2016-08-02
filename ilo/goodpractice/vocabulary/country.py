@@ -12,4 +12,11 @@ class Country(grok.GlobalUtility):
     grok.implements(IVocabularyFactory)
 
     def __call__(self,context):
-      return ISO3166Alpha2CountryVocabulary(context) 
+		data = [samples for samples in ISO3166Alpha2CountryVocabulary(context)]
+		values = ['Africa regional', 
+				'Asia regional', 
+				'Americas regional', 
+				'Europe regional', 'Arab States and Inter-regional/Global']
+		for value in values:
+			data.append(SimpleTerm(value))
+		return SimpleVocabulary(data)
