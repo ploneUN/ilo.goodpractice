@@ -7,5 +7,6 @@
         <dependency>profile-plone.app.relationfield:default</dependency>
         <dependency>profile-ilo.extenders:default</dependency>
         <dependency>profile-collective.excelexport:default</dependency>
+        <dependency>profile-ilo.vocabularies:default</dependency>
     </dependencies>
 </metadata>
