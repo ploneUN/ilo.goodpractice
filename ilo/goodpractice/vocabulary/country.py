@@ -16,7 +16,7 @@ class Country(grok.GlobalUtility):
 		values = ['Africa regional', 
 				'Asia regional', 
 				'Americas regional', 
-				'Europe regional', 'Arab States and Inter-regional/Global']
+				'Europe regional', 'Arab States', 'Inter-regional/Global']
 		for value in values:
 			data.append(SimpleTerm(value))
 		return SimpleVocabulary(data)
