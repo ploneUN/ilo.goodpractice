@@ -1,5 +1,8 @@
 Changelog
 =========
+1.2.5dev8 - aug 3
+-modified browserview for goodpractice adjusted country
+
 1.2.5dev7 - aug 2
 -changed vocab for country go back to old one
 
