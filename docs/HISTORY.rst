@@ -1,5 +1,8 @@
 Changelog
 =========
+1.2.5dev9 - aug 4
+-changed order of new added countries
+
 1.2.5dev8 - aug 3
 -modified browserview for goodpractice adjusted country
 
