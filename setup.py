@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2.5dev5'
+version = '1.2.5dev8'
 
 setup(name='ilo.goodpractice',
       version=version,

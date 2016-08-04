@@ -1,5 +1,14 @@
 Changelog
 =========
+1.2.5dev8 - aug 3
+-modified browserview for goodpractice adjusted country
+
+1.2.5dev7 - aug 2
+-changed vocab for country go back to old one
+
+1.2.5dev6 - aug 2
+-changed vocabulary for country
+
 1.2.5dev5 - july 22
 -fixed js error on faceted
 
